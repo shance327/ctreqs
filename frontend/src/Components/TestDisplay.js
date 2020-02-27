@@ -14,7 +14,6 @@ const recipeDetail = ({ recipeDetail }) => {
                     <h2 class="card-title" style = {{ textAlign: "center" }}>{recipeDet.name} {recipeDet.id}</h2>
                     <p class="card-text" style = {{ textAlign: "center", textSize: 10}}>{recipeDet.instructions}</p>
                     <img src = {recipeDet.imgUrl} style={{ width: 200, height: 200, borderRadius: 8}}/>
-
                 </div>
                 </div>
             ))}

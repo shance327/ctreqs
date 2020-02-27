@@ -14,7 +14,9 @@ class App extends Component {
 
         render() {
             return (
-                <TestDisplay recipeDetail = {this.state.recipeDetails} />
+                <div>
+                    <TestDisplay recipeDetail = {this.state.recipeDetails} />
+                </div>
             )
         }
     }
