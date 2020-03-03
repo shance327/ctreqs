@@ -39,7 +39,6 @@ export default class SearchBar extends Component {
                                 top: "150px",
                                 width: "500px",
                                 left: "300px"
-
                         }}
                             {...params}
                             variant="outlined"

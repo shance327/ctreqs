@@ -5,9 +5,11 @@
 }
 h1 {
     color: #000000;
-    margin-top: 30px;
-    margin-bottom: 60px;
-    font-family: Calibri;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: "Serif";
+    font-size: 45px;
+    text-align: center;
 }
 .SearchPage {
     text-align: center;
@@ -22,14 +24,15 @@ input {
     border: 1px solid #4e5766;
     box-shadow: 1px 0.5px #888888;
     font-size: 18px;
-    font-family: Calibri;
+    font-family: Serif;
 }
 button {
     padding: 12px 10px;
-    width: 30%;
+    width: 20%;
     border-radius: 4px;
-    background-color: orange;
+    background-color: limegreen;
     color: #ffffff;
     cursor: pointer;
     font-size: 18px;
+    margin-bottom: 30px;
 }
