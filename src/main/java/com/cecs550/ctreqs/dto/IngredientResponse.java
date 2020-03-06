@@ -5,9 +5,10 @@ import lombok.ToString;
 
 @Data
 @ToString
-public class IngredientResponse {
+public class IngredientResponse implements Comparable<IngredientResponse>{
     private Integer recipeId;
     private String recipeName;
+    private Integer count = 0;
 
     public IngredientResponse(Integer recipeId, String recipeName) {
         this.recipeId = recipeId;
@@ -28,5 +29,18 @@ public class IngredientResponse {
 
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    @Override
+    public int compareTo(IngredientResponse o) {
+        return this.getCount().compareTo(o.getCount());
     }
 }

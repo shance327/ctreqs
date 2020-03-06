@@ -8,13 +8,10 @@ import com.cecs550.ctreqs.model.Ingredient;
 import com.cecs550.ctreqs.model.Recipe;
 import com.cecs550.ctreqs.repository.IngredientRepository;
 import com.cecs550.ctreqs.repository.RecipeRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+
 
 @RestController
 public class Controller {
@@ -59,9 +56,37 @@ public class Controller {
         return recipeResponseFormatted;
     }
 
-    @GetMapping("api/ingredients/{id}")
+    @GetMapping("/api/ingredients/{id}")
     public List<IngredientResponse> getRecipesByIID(@PathVariable final Integer id) {
         return ingredientRepository.myGetRecipesByIID(id);
+    }
+
+    @RequestMapping("/api/ingredientIds")
+    public List<IngredientResponse> getRecipesByIIDs(@RequestParam("id") int[] ingredientIds) {
+        List<IngredientResponse> recipeList = new ArrayList<IngredientResponse>();
+        for(Integer id: ingredientIds) {
+            List<IngredientResponse> ingredientResponses = ingredientRepository.myGetRecipesByIID(id);
+            List<IngredientResponse> tempList = new ArrayList<IngredientResponse>();
+            if(recipeList.size() == 0) {
+                recipeList.addAll(ingredientResponses);
+            } else {
+                for(int i = 0; i < ingredientResponses.size(); i++) {
+                    for(int j = 0; j < recipeList.size(); j++) {
+                        if(recipeList.get(j).getRecipeId().equals(ingredientResponses.get(i).getRecipeId())) {
+                            recipeList.get(j).setCount(recipeList.get(j).getCount() + 1);
+                            break;
+                        }
+                        if (i + 1 == ingredientResponses.size() && j + 1 == recipeList.size()) {
+                            tempList.add(ingredientResponses.get(i));
+                        }
+                    }
+                }
+            }
+            recipeList.addAll(tempList);
+        }
+        //recipeList = recipeList.stream().distinct().collect(Collectors.toList());
+        recipeList.sort(Collections.reverseOrder());
+        return recipeList;
     }
 }
 
