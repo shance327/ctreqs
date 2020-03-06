@@ -76,7 +76,7 @@ public class Controller {
                             recipeList.get(j).setCount(recipeList.get(j).getCount() + 1);
                             break;
                         }
-                        if (i + 1 == ingredientResponses.size() && j + 1 == recipeList.size()) {
+                        if (j + 1 == recipeList.size()) {
                             tempList.add(ingredientResponses.get(i));
                         }
                     }
