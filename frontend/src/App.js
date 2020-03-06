@@ -1,21 +1,15 @@
 import React, { Component } from 'react'
-import TestDisplay from "./Components/TestDisplay";
+import TestDisplay from "./Components/UI/RecipeCards";
+import DisplayRecipes from "./Components/UI/DisplayRecipes";
 class App extends Component {
 
-    state = { recipeDetails: [] }
-
-    componentDidMount() {
-        fetch('/api/recipes')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({ recipeDetails: data })
-            })
-            .catch(console.log) }
+    state = {}
 
         render() {
             return (
                 <div>
-                    <TestDisplay recipeDetail = {this.state.recipeDetails} />
+                    <h1>Entry Point</h1>
+                    <DisplayRecipes></DisplayRecipes>
                 </div>
             )
         }
