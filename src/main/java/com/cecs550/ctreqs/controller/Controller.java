@@ -23,21 +23,25 @@ public class Controller {
         this.ingredientRepository = ingredientRepository;
     }
 
+    //Return all the recipes in the recipe table
     @GetMapping("/api/recipes")
     public Iterable<Recipe> findAllRecipes() {
         return recipeRepository.findAll();
     }
 
+    //Return a specific recipe given the ID
     @GetMapping("/api/recipes/{id}")
     public Optional<Recipe> findRecipeById(@PathVariable final Integer id) {
         return recipeRepository.findById(id);
     }
 
+    //Return all ingredients in the ingredient table
     @GetMapping("api/ingredients")
     public Iterable<Ingredient> findAllIngredients() {
         return ingredientRepository.findAll();
     }
 
+    //Return all the info about a recipe and a list of ingredients
     @GetMapping("api2/recipes/{id}")
     public RecipeResponseFormatted getJoinedInfo(@PathVariable final Integer id) {
         List<RecipeResponse> recipeResponses = recipeRepository.myGetJoinedInfo(id);
@@ -55,12 +59,13 @@ public class Controller {
         recipeResponseFormatted.setIngredientsInRecipe(ingredientsInRecipes);
         return recipeResponseFormatted;
     }
-
+    //Return a list of recipes given the ingredient ID
     @GetMapping("/api/ingredients/{id}")
     public List<IngredientResponse> getRecipesByIID(@PathVariable final Integer id) {
         return ingredientRepository.myGetRecipesByIID(id);
     }
 
+    //Return a list of recipes given a list of ingredient ids, order the recipes as most ingredients matched
     @RequestMapping("/api/ingredientIds")
     public List<IngredientResponse> getRecipesByIIDs(@RequestParam("id") int[] ingredientIds) {
         List<IngredientResponse> recipeList = new ArrayList<IngredientResponse>();
