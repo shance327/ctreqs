@@ -6,6 +6,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import TestPage from "./Components/Pages/TestPage";
 import * as serviceWorker from './serviceWorker';
 import SearchBarPage from "./Components/Pages/SearchBarPage";
+import SearchResultsPage from "./Components/Pages/SearchResultsPage";
 
 const routing = (
     <Router>
@@ -24,6 +25,7 @@ const routing = (
             <Route exact path="/" component={App} />
             <Route path= '/TestPage' component = {TestPage}/>
             <Route path= '/FrontPage' component = {SearchBarPage}/>
+            <Route path= '/results' component= {SearchResultsPage}/>
         </div>
     </Router>
 )

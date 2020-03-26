@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Chip from '@material-ui/core/Chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-import './SearchBar.css'
+import './SearchBar.css';
+import { Redirect } from 'react-router-dom';
 
 export default class SearchBar extends Component {
 
@@ -36,32 +37,43 @@ export default class SearchBar extends Component {
         });
     }
 
-    // Renders the search bar
+    // Renders the search bar and or a redirect if a search response has been received.
     render() {
-        return (
-            <div className="SearchBar" style={{marginTop: 50}}>
-                <Autocomplete
-                    multiple
-                    size = 'medium'
-                    id="tags-outlined"
-                    options={this.state.ingredients}
-                    getOptionLabel={option => option.name}
-                    //defaultValue={}
-                    filterSelectedOptions
-                    onChange={this.onTagsChange}
-                    renderInput={params => (
-                        <TextField
-                            {...params}
-                            variant="outlined"
-                            label="filterSelectedOptions"
-                            placeholder="Ingredients"
-                        />
-                    )}
-                />
-                <button onClick={this.handleSearch}>Search</button>
-            </div>
-        )
-    }
+        if (this.state.response.length > 0) {
+            console.log("Attempting to redirect with number of responses: " + this.state.response.length);
+            console.log("Attempting to redirect with: " + this.state.response);
+            return (<Redirect
+                to={{
+                    pathname: "/results",
+                    state: { responses: this.state.response }
+                }}
+            />) }
+        else {
+            return (
+                <div className="container-search" style={{marginTop: 50}}>
+                    <Autocomplete
+                        multiple
+                        size = 'medium'
+                        id="tags-outlined"
+                        options={this.state.ingredients}
+                        getOptionLabel={option => option.name}
+                        //defaultValue={}
+                        filterSelectedOptions
+                        onChange={this.onTagsChange}
+                        renderInput={params => (
+                            <TextField
+                                {...params}
+                                variant="outlined"
+                                //label="Input Ingredients"
+                                //placeholder="Ingredients"
+                            />
+                        )}
+                    />
+                    <button className ="searchButton" onClick={this.handleSearch}>Search</button>
+                </div>
+                )
+            }
+        }
 
     // Event handler for search button
     handleSearch = () => {
@@ -91,5 +103,6 @@ export default class SearchBar extends Component {
             });
 
         console.log("search response:" + this.state.response);
+
     };
 }
