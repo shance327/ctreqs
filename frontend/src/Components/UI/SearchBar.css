@@ -1,8 +1,18 @@
 
-.root {
-    width: 50px;
+.MuiAutocomplete-root {
+    text-align: center;
 }
 
-.TextField {
-    width: 50px;
+.MuiTextField-root {
+    width: 50%;
+    margin: auto;
 }
+
+.searchButton {
+    width: 10%;
+    background-color: #61dafb;
+    float: left;
+}
+
+
+

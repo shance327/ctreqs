@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-// component for displaying basic recipes info to a page.
+// component for displaying basic recipes info on a page.
 // recipe detail component maps received information into the recipeDetail object
 const recipeDetail = ({ recipeDetail }) => {
     return (
