@@ -11,6 +11,8 @@ import com.cecs550.ctreqs.repository.RecipeRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 
 @RestController
@@ -92,6 +94,17 @@ public class Controller {
         //recipeList = recipeList.stream().distinct().collect(Collectors.toList());
         recipeList.sort(Collections.reverseOrder());
         return recipeList;
+    }
+
+    //Return a random recipe
+    @RequestMapping("/api/randomRecipe")
+    public Recipe getRandomRecipe() {
+        Iterable<Recipe> recipes = recipeRepository.findAll();
+        List<Recipe> recipeList = StreamSupport.stream(recipes.spliterator(), false)
+                .collect(Collectors.toList());
+        Random rand = new Random();
+
+        return recipeList.get(rand.nextInt(recipeList.size()));
     }
 }
 

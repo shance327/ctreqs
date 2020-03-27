@@ -8,11 +8,13 @@ import lombok.ToString;
 public class IngredientResponse implements Comparable<IngredientResponse>{
     private Integer recipeId;
     private String recipeName;
+    private String imgUrl;
     private Integer count = 0;
 
-    public IngredientResponse(Integer recipeId, String recipeName) {
+    public IngredientResponse(Integer recipeId, String recipeName, String imgUrl) {
         this.recipeId = recipeId;
         this.recipeName = recipeName;
+        this.imgUrl = imgUrl;
     }
 
     public Integer getRecipeId() {
@@ -37,6 +39,14 @@ public class IngredientResponse implements Comparable<IngredientResponse>{
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     @Override
