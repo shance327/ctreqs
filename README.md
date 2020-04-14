@@ -9,5 +9,3 @@
 - Navigate to the target folder
 - Right click on the ctreqs-0.0.0-SNAPSHOT.jar -> Run
 - Go to localhost:8080
-
-## User Manual
