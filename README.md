@@ -2,6 +2,7 @@
 
 ## How to install and deploy the app
 - Clone the project from Github through an IDE like Intellij
+- Java JDK 1.8 is required
 - Click 'Import changes' to imports all the Maven dependency when the project opens
 - In Intellij, on the right side, select Maven -> Profiles -> check 'sql', then click 'Import changes' when it pops up  
 - Still in Maven, click 'ctreqs' dropdown -> lifecycle -> clean -> install (will take some time for the first time)
