@@ -17,7 +17,7 @@ export default class SearchBar extends Component {
     // Makes a request before the first render to load ingredient information in to the options of
     // search bar. Ingredient information is stored in the ingredients var of the state object.
     componentDidMount() {
-        fetch('/api/ingredients')
+        fetch('/v1/ingredients')
             .then(res => res.json())
             .then((data) => {
                 this.setState({ingredients: data})
@@ -91,7 +91,7 @@ export default class SearchBar extends Component {
             }
 
         const encodedValue = encodeURIComponent(ids);
-        let searchUrl = `api/ingredientIds?id=${encodedValue}`;
+        let searchUrl = `/v1/ingredientIds?id=${encodedValue}`;
 
         fetch(searchUrl)
             .then(response => {

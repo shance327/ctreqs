@@ -7,7 +7,7 @@ class DisplayRecipes extends Component {
     state = { recipeDetails: [] }
 
     componentDidMount() {
-        fetch('/api/recipes')
+        fetch('/v1/recipes')
             .then(res => res.json())
             .then((data) => {
                 this.setState({recipeDetails: data})

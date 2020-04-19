@@ -39,14 +39,14 @@ class TestPage extends React.Component {
 
     handleOnChange = event => {
         this.setState({ searchValue: event.target.value });
-    }
+    };
 
     handleSearch = () => {
             this.makeApiCall(this.state.searchValue);
     };
 
     makeApiCall = searchInput => {
-    let searchUrl = `api/recipes/${searchInput}`;
+    let searchUrl = `/v1/recipe/${searchInput}`;
 
     fetch(searchUrl)
         .then(response => {
