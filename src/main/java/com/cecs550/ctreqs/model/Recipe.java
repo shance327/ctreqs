@@ -9,10 +9,10 @@ public class Recipe implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "RecipeID")
-    private Integer id;
+    private Integer recipeId;
 
     @Column(name = "RecipeName")
-    private String name;
+    private String recipeName;
 
     @Column(name = "Instructions")
     private String instructions;
@@ -20,20 +20,20 @@ public class Recipe implements Serializable {
     @Column(name = "imgurl")
     private String imgUrl;
 
-    public Integer getId() {
-        return id;
+    public Integer getRecipeId() {
+        return recipeId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setRecipeId(Integer recipeId) {
+        this.recipeId = recipeId;
     }
 
-    public String getName() {
-        return name;
+    public String getRecipeName() {
+        return recipeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRecipeName(String recipeName) {
+        this.recipeName = recipeName;
     }
 
     public String getInstructions() {
