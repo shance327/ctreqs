@@ -4,6 +4,10 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import './SearchBar.css';
 import { Redirect } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import {ThemeClass} from './CTTheme';
+import {ThemeProvider} from '@material-ui/core/styles';
+import {createMuiTheme} from "@material-ui/core";
 
 export default class SearchBar extends Component {
 
@@ -24,6 +28,22 @@ export default class SearchBar extends Component {
             })
             .catch(console.log)
     }
+
+    //theme used for search buttons
+    theme = createMuiTheme({
+        palette: {
+            primary: {
+                main: '#32CD32',
+                contrastText: '#6D616F'
+            },
+            secondary: {
+                main: '#6D616F',
+                contrastText: '#32CD32'
+            },
+            contrastThreshold: 3,
+            tonalOffset: 0.2
+        }
+    });
 
     // handles changes in selected ingredients, storing all selected values in the selected var of
     // the state object
@@ -72,15 +92,36 @@ export default class SearchBar extends Component {
                             />
                         )}
                     />
-                    <button className ="searchButton" onClick={this.handleSearch}>Search</button>
+
+                    <ThemeProvider theme ={this.theme}>
+                        <Button color ="primary" variant = "contained" className ="searchButton" onClick={this.handleSearch}>Search</Button>
+                        <Button color ="secondary" variant ="contained" className ="buzzButton" onClick={this.handleBuzz}>I'm Feeling Buzzed</Button>
+                    </ThemeProvider>
                 </div>
                 )
             }
         }
-
+    handleBuzz = () => {
+        this.buzzPicks(this.state.selected);
+    };
     // Event handler for search button
     handleSearch = () => {
         this.makeApiCall(this.state.selected);
+    };
+
+    buzzPicks = () => {
+        let searchUrl = `/v1/randomRecipe`;
+
+        fetch(searchUrl)
+            .then(response => {
+                return response.json();
+            })
+            .then(jsonData => {
+                console.log(jsonData);
+                this.setState({ response: [...this.state.response ,jsonData] });
+            });
+        console.log(this.state.response.length);
+        console.log("search response:" + this.state.response);
     };
 
     searchByRecipe = () => {

@@ -9,10 +9,20 @@
 }
 
 .searchButton {
-    width: 10%;
-    background-color: #61dafb;
-    float: left;
+    width: 20%;
+    color: limegreen;
 }
+
+.buzzButton {
+    width: 30%;
+}
+
+.SearchPage {
+    text-align: center;
+}
+
+
+
 
 
 
