@@ -5,7 +5,6 @@ import TextField from '@material-ui/core/TextField';
 import './SearchBar.css';
 import { Redirect } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import {ThemeClass} from './CTTheme';
 import {ThemeProvider} from '@material-ui/core/styles';
 import {createMuiTheme} from "@material-ui/core";
 
@@ -55,7 +54,7 @@ export default class SearchBar extends Component {
             // given by Autocomplete options property.
             console.log(this.state.selected);
         });
-    }
+    };
 
     // Renders the search bar and or a redirect if a search response has been received.
     render() {
