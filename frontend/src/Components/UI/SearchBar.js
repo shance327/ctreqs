@@ -51,6 +51,9 @@ export default class SearchBar extends Component {
         else {
             return (
                 <div className="container-search" style={{marginTop: 50}}>
+                    <h1>CTReqs</h1>
+                    <img src = "lime.jpg" style= {{ width: 300, height: 200, borderRadius: 20}}  />
+                    <p>Enter ingredients in the search bar or <a href='\TestPage'>search by recipe here</a> </p>
                     <Autocomplete
                         multiple
                         size = 'medium'
@@ -78,6 +81,10 @@ export default class SearchBar extends Component {
     // Event handler for search button
     handleSearch = () => {
         this.makeApiCall(this.state.selected);
+    };
+
+    searchByRecipe = () => {
+        window.location = '/TestPage';
     };
 
     // Makes request for all recipes containing one or more of the ingredients selected on the search bar

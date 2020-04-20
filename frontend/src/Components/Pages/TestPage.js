@@ -12,6 +12,7 @@ class TestPage extends React.Component {
             <div className="SearchPage">
                 <h1>CTReqs</h1>
                 <img src = "lime.jpg" style= {{ width: 300, height: 200, borderRadius: 20}}  />
+                <p>Enter recipe name in the search bar or <a href='\FrontPage'>search by ingredients here</a> </p>
 
                 <input
                     name="text"
