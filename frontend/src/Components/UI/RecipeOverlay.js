@@ -30,7 +30,7 @@ export default class RecipeOverlay extends Component {
             if (ingredients.unit == null) {
                 ingredients.unit = '';
             }
-            this.state.ingredientsList = this.state.ingredientsList + '\n' + ingredients.ingredientName + ': ' + ingredients.measure + ' ' + ingredients.unit
+            this.state.ingredientsList = this.state.ingredientsList + '\n' + ingredients.measure + ' ' + ingredients.unit + ' ' + ingredients.ingredientName
         })}
     }
     callRecipeInfo(id) {
