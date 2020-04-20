@@ -93,7 +93,10 @@ export default class SearchBar extends Component {
                     />
 
                     <ThemeProvider theme ={this.theme}>
+                        <br/>
                         <Button color ="primary" variant = "contained" className ="searchButton" onClick={this.handleSearch}>Search</Button>
+                        <br/>
+                        <br/>
                         <Button color ="secondary" variant ="contained" className ="buzzButton" onClick={this.handleBuzz}>I'm Feeling Buzzed</Button>
                     </ThemeProvider>
                 </div>
