@@ -36,5 +36,8 @@
       "last 1 safari version",
       "last 1 edge version"
     ]
+  },
+  "devDependencies": {
+    "@material-ui/icons": "^4.9.1"
   }
 }
