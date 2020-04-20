@@ -1,0 +1,21 @@
+.recipeButton {
+    width: 100%;
+}
+
+#recipeInfoList {
+    white-space:pre-wrap;
+}
+
+#container {
+    white-space:pre-wrap;
+    display: flex;
+
+}
+
+#ingredientsList {
+    padding: 24px;
+}
+
+#instructionsTitle {
+    padding: 0;
+}

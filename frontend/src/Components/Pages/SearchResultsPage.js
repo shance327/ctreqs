@@ -1,12 +1,11 @@
-import React from 'react'
+import React, {Component} from 'react';
+import RecipeOverlay from "../UI/RecipeOverlay";
 
 // takes result from redirect and displays them in cards. Results are referenced using this.props.location.state.responses
 // *This component could be better organized into individual components*
-class SearchBarPage extends React.Component {
+class SearchBarPage extends Component {
 
     render() {
-        console.log("props responses: " + this.props.location.state.responses);
-
         // maps results to card components displaying recipe names.
         return (
             <div>
@@ -16,10 +15,7 @@ class SearchBarPage extends React.Component {
                         boxShadow: '2px 2px 2px 2px lightgray',
                         transition: 0.5, width: '50%', margin: 'auto'
                     }}>
-                        <div className="card-body">
-                            <h2 className="card-title"
-                                style={{textAlign: "center", marginTop: 10}}> {result.recipeName}</h2>
-                        </div>
+                        <RecipeOverlay recipeId={result.recipeId} recipeName={result.recipeName} recipeImg ={result.imgUrl} />
                     </div>
                 ))}
             </div>
