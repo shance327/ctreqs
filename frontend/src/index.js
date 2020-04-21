@@ -22,7 +22,7 @@ const routing = (
             {/*        <Link to ="/FrontPage">Front Page</Link>*/}
             {/*    </li>*/}
             {/*</ul>*/}
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component={SearchBarPage} />
             <Route path= '/TestPage' component = {TestPage}/>
             <Route path= '/FrontPage' component = {SearchBarPage}/>
             <Route path= '/results' component= {SearchResultsPage}/>
