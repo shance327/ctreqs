@@ -87,7 +87,7 @@ export default class SearchBar extends Component {
     // Event handler for search button
     handleSearch = () => {
         if (this.state.recipeSearch == true) {
-            this.recipeSearch(this.state.selected[0].recipeId);
+            this.recipeSearch(this.state.selected.recipeId);
         }
         else {
             this.makeApiCall(this.state.selected);
@@ -166,9 +166,8 @@ export default class SearchBar extends Component {
                             <h1>CTReqs</h1>
                             <img src = "lime.jpg" style= {{ width: 300, height: 200, borderRadius: 20}}  />
                             <Autocomplete
-                                multiple
                                 size = 'medium'
-                                id="tags-outlined"
+                                id="combo-box-demo"
                                 limitTags={1}
                                 options={this.state.recipes}
                                 getOptionLabel={option => option.recipeName}
