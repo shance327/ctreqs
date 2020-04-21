@@ -70,6 +70,16 @@ export default class SearchBar extends Component {
         else {
             return (
                 <div className="container-search" style={{marginTop: 50}}>
+                    <h1>CTReqs</h1>
+                    <img src = "lime.jpg" style= {{ width: 300, height: 200, borderRadius: 20}}  />
+
+                    <p>Enter ingredients in the search bar or <a href='\TestPage'>search by recipe here</a> </p>
+                    <ThemeProvider theme ={this.theme}>
+                        <br/>
+                        <Button color ="primary" variant = "contained" className ="searchButton" onClick={this.handleSearch}>Search</Button>
+                        <br/>
+                    </ThemeProvider>
+
                     <Autocomplete
                         multiple
                         size = 'medium'
@@ -88,6 +98,13 @@ export default class SearchBar extends Component {
                             />
                         )}
                     />
+                    <ThemeProvider theme ={this.theme}>
+                        <br/>
+                        <Button color ="primary" variant = "contained" className ="searchButton" onClick={this.handleSearch}>Search</Button>
+                        <br/>
+                        <br/>
+                        <Button color ="secondary" variant ="contained" className ="buzzButton" onClick={this.handleBuzz}>I'm Feeling Buzzed</Button>
+                    </ThemeProvider>
                 </div>
                 )
             }

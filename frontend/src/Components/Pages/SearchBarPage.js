@@ -30,28 +30,7 @@ class SearchBarPage extends React.Component {
 
     render() {
         return(
-
-            <div>
-                <h1>CTReqs</h1>
-                <img src = "lime.jpg" style= {{ width: 300, height: 200, borderRadius: 20}}  />
-
-                <p>Enter ingredients in the search bar or <a href='\TestPage'>search by recipe here</a> </p>
-                <ThemeProvider theme ={this.theme}>
-                    <br/>
-                    <Button color ="primary" variant = "contained" className ="searchButton" onClick={this.handleSearch}>Search</Button>
-                    <br/>
-                </ThemeProvider>
-                <SearchBar ingredients = {this.ingredients}/>
-
-                <ThemeProvider theme ={this.theme}>
-                    <br/>
-                    <Button color ="primary" variant = "contained" className ="searchButton" onClick={this.handleSearch}>Search</Button>
-                    <br/>
-                    <br/>
-                    <Button color ="secondary" variant ="contained" className ="buzzButton" onClick={this.handleBuzz}>I'm Feeling Buzzed</Button>
-                </ThemeProvider>
-            </div>
-
+            <SearchBar ingredients = {this.ingredients}/>
         )
     }
 
