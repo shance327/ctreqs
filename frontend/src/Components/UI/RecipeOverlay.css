@@ -19,3 +19,8 @@
 #instructionsTitle {
     padding: 0;
 }
+
+.imgBox {
+    padding: 16px;
+    flex-direction: column;
+}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import RecipeOverlay from "../UI/RecipeOverlay";
+import './SearchResultsPage.css';
 
 // takes result from redirect and displays them in cards. Results are referenced using this.props.location.state.responses
 // *This component could be better organized into individual components*

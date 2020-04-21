@@ -51,8 +51,9 @@ export default class RecipeOverlay extends Component {
                 this.findIngredients();
             }
             return (<Fragment>
+                    <div className="imgBox"><img src={this.props.recipeImg} height="150px" width="150px"/></div>
                     <Button className="recipeButton" color="primary" onClick={() => this.setupDisplay()} size="large">
-                        <img src={this.props.recipeImg} height="150px" width="150px"/> { this.props.recipeName }
+                        <div className="recipeName">{ this.props.recipeName }</div>
                     </Button>
                     <Dialog id="recipeDialog" open={open} onClose={this.handleToggle} aria-labelledby="form-dialog-title">
                         <DialogTitle id="form-dialog-title">
@@ -87,9 +88,13 @@ export default class RecipeOverlay extends Component {
         }
         else {
             return (
-            <Button className="recipeButton" color="secondary" onClick={() => this.setupDisplay()} size="large">
-                <img src={this.props.recipeImg} height="150px" width="150px"/> { this.props.recipeName }
-            </Button>)
+            <Fragment>
+                <div className="imgBox"><img src={this.props.recipeImg} height="150px" width="150px"/></div>
+                <Button className="recipeButton" color="secondary" onClick={() => this.setupDisplay()} size="large">
+                    <div className="recipeList">{ this.props.recipeName }</div>
+                </Button>
+            </Fragment>
+            )
         }
 
     }
