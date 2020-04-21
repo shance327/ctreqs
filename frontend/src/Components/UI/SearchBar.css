@@ -7,6 +7,7 @@
     width: 50%;
     margin: auto;
 }
+
 p {
     color: #000000;
     margin-top: 20px;
@@ -17,32 +18,26 @@ p {
 }
 
 img{
-display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
-
 
 .searchButton {
     width: 20%;
     color: limegreen;
     font-size: 18px;
-        margin-bottom: 30px;
-        padding: 12px 10px;
-        width: 20%;
-        border-radius: 4px;
+    margin-bottom: 30px;
+    padding: 12px 10px;
+    width: 20%;
+    border-radius: 4px;
 }
 
 .buzzButton {
     width: 30%;
 }
 
-.SearchPage {
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
-}
 
 
 
