@@ -11,17 +11,17 @@ import SearchResultsPage from "./Components/Pages/SearchResultsPage";
 const routing = (
     <Router>
         <div className = "Navigation">
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to = "/TestPage">Test Page</Link>
-                </li>
-                <li>
-                    <Link to ="/FrontPage">Front Page</Link>
-                </li>
-            </ul>
+            {/*<ul>*/}
+            {/*    <li>*/}
+            {/*        <Link to="/">Home</Link>*/}
+            {/*    </li>*/}
+            {/*    <li>*/}
+            {/*        <Link to = "/TestPage">Test Page</Link>*/}
+            {/*    </li>*/}
+            {/*    <li>*/}
+            {/*        <Link to ="/FrontPage">Front Page</Link>*/}
+            {/*    </li>*/}
+            {/*</ul>*/}
             <Route exact path="/" component={App} />
             <Route path= '/TestPage' component = {TestPage}/>
             <Route path= '/FrontPage' component = {SearchBarPage}/>

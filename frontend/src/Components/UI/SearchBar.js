@@ -37,7 +37,7 @@ export default class SearchBar extends Component {
             },
             secondary: {
                 main: '#6D616F',
-                contrastText: '#32CD32'
+                contrastText: '#FFFFFF'
             },
             contrastThreshold: 3,
             tonalOffset: 0.2
@@ -59,8 +59,6 @@ export default class SearchBar extends Component {
     // Renders the search bar and or a redirect if a search response has been received.
     render() {
         if (this.state.response.length > 0) {
-            console.log("Attempting to redirect with number of responses: " + this.state.response.length);
-            console.log("Attempting to redirect with: " + this.state.response);
             return (<Redirect
                 to={{
                     pathname: "/results",
@@ -69,10 +67,9 @@ export default class SearchBar extends Component {
             />) }
         else {
             return (
-                <div className="container-search" style={{marginTop: 50}}>
+                <div className="SearchPage" style={{marginTop: 50}}>
                     <h1>CTReqs</h1>
                     <img src = "lime.jpg" style= {{ width: 300, height: 200, borderRadius: 20}}  />
-
                     <p>Enter ingredients in the search bar or <a href='\TestPage'>search by recipe here</a> </p>
                     <ThemeProvider theme ={this.theme}>
                         <br/>
@@ -98,12 +95,10 @@ export default class SearchBar extends Component {
                             />
                         )}
                     />
+
                     <ThemeProvider theme ={this.theme}>
-                        <br/>
-                        <Button color ="primary" variant = "contained" className ="searchButton" onClick={this.handleSearch}>Search</Button>
-                        <br/>
-                        <br/>
-                        <Button color ="secondary" variant ="contained" className ="buzzButton" onClick={this.handleBuzz}>I'm Feeling Buzzed</Button>
+                        <Button color ="primary" variant = "contained" onClick={this.handleSearch}>Search</Button>
+                        <Button color ="secondary" variant ="contained" onClick={this.handleBuzz}>I'm Feeling Buzzed</Button>
                     </ThemeProvider>
                 </div>
                 )
