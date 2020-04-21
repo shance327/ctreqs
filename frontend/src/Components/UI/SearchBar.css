@@ -8,22 +8,6 @@
     margin: auto;
 }
 
-p {
-    color: #000000;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: "Serif";
-    font-size: 20px;
-    text-align: center;
-}
-
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
-
 .searchButton {
     width: 20%;
     color: limegreen;

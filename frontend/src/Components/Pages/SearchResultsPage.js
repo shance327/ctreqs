@@ -11,14 +11,16 @@ class SearchBarPage extends Component {
         return (
             <div>
                 <h1>Results</h1>
+                <div id="resultsContainer">
                 {this.props.location.state.responses.map((result, index) => (
-                    <div className="card" style={{
-                        boxShadow: '2px 2px 2px 2px lightgray',
-                        transition: 0.5, width: '50%', margin: 'auto'
-                    }}>
-                        <RecipeOverlay recipeId={result.recipeId} recipeName={result.recipeName} recipeImg ={result.imgUrl} />
-                    </div>
+                        <div className="card" style={{
+                            boxShadow: '2px 2px 2px 2px lightgray',
+                            transition: 0.5, width: '50%', margin: 'auto'
+                        }}>
+                            <RecipeOverlay recipeId={result.recipeId} recipeName={result.recipeName} recipeImg ={result.imgUrl} />
+                        </div>
                 ))}
+                </div>
             </div>
         );
     }

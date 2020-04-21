@@ -51,7 +51,7 @@ export default class RecipeOverlay extends Component {
                 this.findIngredients();
             }
             return (<Fragment>
-                    <div className="imgBox"><img src={this.props.recipeImg} height="150px" width="150px"/></div>
+                    <div className="imgBox"><img src={this.props.recipeImg} height="100px" width="100px"/></div>
                     <Button className="recipeButton" color="primary" onClick={() => this.setupDisplay()} size="large">
                         <div className="recipeName">{ this.props.recipeName }</div>
                     </Button>
@@ -89,7 +89,7 @@ export default class RecipeOverlay extends Component {
         else {
             return (
             <Fragment>
-                <div className="imgBox"><img src={this.props.recipeImg} height="150px" width="150px"/></div>
+                <div className="imgBox"><img src={this.props.recipeImg} height="100px" width="100px"/></div>
                 <Button className="recipeButton" color="secondary" onClick={() => this.setupDisplay()} size="large">
                     <div className="recipeList">{ this.props.recipeName }</div>
                 </Button>
